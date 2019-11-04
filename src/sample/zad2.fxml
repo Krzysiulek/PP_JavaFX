@@ -10,18 +10,23 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <CheckBox fx:id="chart_type_id" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#chartTypeChange" text="Chart type" />
             <TextField fx:id="a_id" layoutX="101.0" layoutY="141.0" text="1.0" />
             <TextField fx:id="b_id" layoutX="101.0" layoutY="193.0" text="0" />
             <Text layoutX="12.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A:" />
             <Text layoutX="12.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B:" />
             <TextField fx:id="c_id" layoutX="101.0" layoutY="245.0" text="0" />
             <Text layoutX="12.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C:" />
-            <Text layoutX="18.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y = Ax^2 + Bx + C" />
             <Button fx:id="generateChartButton" layoutX="182.0" layoutY="530.0" mnemonicParsing="false" onAction="#generateChart" text="Generate" />
             <TextField fx:id="series_name_id" layoutX="101.0" layoutY="97.0" text="Series" />
             <Text layoutX="12.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Series name:" />
             <Button fx:id="clear_button_id" layoutX="28.0" layoutY="530.0" mnemonicParsing="false" onAction="#clearCharts" text="Clear" />
+            <TextField fx:id="to_id" layoutX="102.0" layoutY="53.0" text="60.0" />
+            <TextField fx:id="from_id" layoutX="101.0" layoutY="14.0" text="-60.0" />
+            <Text layoutX="12.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From:" />
+            <Text layoutX="12.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To:" />
+            <ChoiceBox fx:id="choice_id" layoutX="101.0" layoutY="299.0" prefWidth="150.0" />
+            <Text layoutX="60.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quadratic: y = Ax^2 + Bx + C" />
+            <Text layoutX="60.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logarithmic: y = log (A) (x) + B" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
