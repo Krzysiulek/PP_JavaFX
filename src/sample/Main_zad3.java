@@ -12,12 +12,6 @@ public class Main_zad3 extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        CoffeeDao dao = new CoffeeDao();
-        List<Coffee> coffeeList = dao.getAll();
-        for (Coffee c : coffeeList) {
-            System.out.println(c.toString());
-        }
-
         Parent root = FXMLLoader.load(getClass().getResource("zad3.fxml"));
         primaryStage.setTitle("CoffeeViewer");
         primaryStage.setScene(new Scene(root, 300, 275));
