@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_zad3">
    <children>
-      <TableView layoutX="39.0" layoutY="44.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0">
+      <TableView fx:id="table_id" layoutX="39.0" layoutY="44.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0">
         <columns>
           <TableColumn id="name_id" fx:id="name_id" prefWidth="96.0" text="Name" />
           <TableColumn id="supplier_id" fx:id="supplier_id" minWidth="0.0" prefWidth="102.0" text="SupplierId" />
