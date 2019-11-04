@@ -114,7 +114,6 @@ public class Controller_zad2 {
         }
 
         chart_id.getData().add(series);
-        this.initialize();
     }
 
     private double getYQuadratic(double x, double a, double b, double c) {
