@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.2809364548494983" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_zad2">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="chart_type_id" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#chartTypeChange" text="Chart type" />
+            <TextField fx:id="a_id" layoutX="101.0" layoutY="141.0" text="1.0" />
+            <TextField fx:id="b_id" layoutX="101.0" layoutY="193.0" text="0" />
+            <Text layoutX="12.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A:" />
+            <Text layoutX="12.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B:" />
+            <TextField fx:id="c_id" layoutX="101.0" layoutY="245.0" text="0" />
+            <Text layoutX="12.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C:" />
+            <Text layoutX="18.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y = Ax^2 + Bx + C" />
+            <Button fx:id="generateChartButton" layoutX="182.0" layoutY="530.0" mnemonicParsing="false" onAction="#generateChart" text="Generate" />
+            <TextField fx:id="series_name_id" layoutX="101.0" layoutY="97.0" text="Series" />
+            <Text layoutX="12.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Series name:" />
+            <Button fx:id="clear_button_id" layoutX="28.0" layoutY="530.0" mnemonicParsing="false" onAction="#clearCharts" text="Clear" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <LineChart fx:id="chart_id" layoutX="107.0" layoutY="99.0">
+              <xAxis>
+                <NumberAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
