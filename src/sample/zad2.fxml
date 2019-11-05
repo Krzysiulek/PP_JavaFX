@@ -28,10 +28,11 @@
             <Text layoutX="60.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quadratic: y = Ax^2 + Bx + C" />
             <Text layoutX="60.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logarithmic: y = log (A) (x) + B" />
             <Text layoutX="60.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power: y = x^A + B" />
+            <CheckBox fx:id="change_chart_id" layoutX="98.0" layoutY="480.0" mnemonicParsing="false" onAction="#changeChartType" text="Chart type change" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <LineChart fx:id="chart_id" layoutX="107.0" layoutY="99.0">
+            <LineChart fx:id="chart_id" layoutX="50.0" layoutY="51.0">
               <xAxis>
                 <NumberAxis side="BOTTOM" />
               </xAxis>
@@ -39,6 +40,14 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </LineChart>
+            <AreaChart fx:id="chart_area_id" layoutX="50.0" layoutY="51.0">
+              <xAxis>
+                <NumberAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </AreaChart>
          </children></AnchorPane>
   </items>
 </SplitPane>

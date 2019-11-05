@@ -7,9 +7,11 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
@@ -18,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class Controller_zad2 {
     final String QUADRATIC = "Quadratic Function";
-    final String LOG = "Logarithmic Function";
+    final String SIN = "Sinus Function";
     final String POWER = "Power Function";
 
     @FXML // ResourceBundle that was given to the FXMLLoader
@@ -41,6 +43,12 @@ public class Controller_zad2 {
 
     @FXML // fx:id="chart_id"
     private LineChart<?, ?> chart_id; // Value injected by FXMLLoader
+
+    @FXML
+    private AreaChart<?, ?> chart_area_id;
+
+    @FXML
+    private CheckBox change_chart_id;
 
     @FXML // fx:id="a_id"
     private TextField a_id; // Value injected by FXMLLoader
@@ -65,6 +73,7 @@ public class Controller_zad2 {
     @FXML
     void clearCharts(ActionEvent event) {
         chart_id.getData().clear();
+        chart_area_id.getData().clear();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -80,8 +89,23 @@ public class Controller_zad2 {
         assert to_id != null : "fx:id=\"to_id\" was not injected: check your FXML file 'zad2.fxml'.";
         assert choice_id != null : "fx:id=\"choice_id\" was not injected: check your FXML file 'zad2.fxml'.";
 
-        choice_id.setItems(FXCollections.observableArrayList(QUADRATIC, LOG, POWER));
+        choice_id.setItems(FXCollections.observableArrayList(QUADRATIC, SIN, POWER));
         choice_id.setValue(QUADRATIC);
+
+        chart_id.setOpacity(0);
+        chart_area_id.setOpacity(1);
+    }
+
+    @FXML
+    void changeChartType(ActionEvent event) {
+        if (change_chart_id.isSelected()) {
+            chart_id.setOpacity(0);
+            chart_area_id.setOpacity(1);
+        }
+        else {
+            chart_id.setOpacity(1);
+            chart_area_id.setOpacity(0);
+        }
     }
 
     private void generateChart(CharSequence a, CharSequence b, CharSequence c) {
@@ -102,8 +126,9 @@ public class Controller_zad2 {
         final String choice = choice_id.getValue();
         System.out.println(choice_id.getValue());
         for (double x = FROM; x < TO; x += ADD_VALUE) {
-            if (choice.equals(LOG)) {
-                series.getData().add(new XYChart.Data<>(x, getYLog(x, A, B)));
+            if (choice.equals(SIN)) {
+                ADD_VALUE = (TO - FROM) / 100;
+                series.getData().add(new XYChart.Data<>(x, getYSinus(x)));
             }
             else if (choice.equals(POWER)) {
                 series.getData().add(new XYChart.Data<>(x, getYPower(x, A, B)));
@@ -113,7 +138,14 @@ public class Controller_zad2 {
             }
         }
 
-        chart_id.getData().add(series);
+
+        if (change_chart_id.isSelected()) {
+            chart_area_id.getData().add(series);
+        }
+        else {
+            chart_id.getData().add(series);
+        }
+//        initialize();
     }
 
     private double getYQuadratic(double x, double a, double b, double c) {
@@ -126,6 +158,10 @@ public class Controller_zad2 {
 
     private double getYPower(double x, double n, double b) {
         return Math.pow(x, n) + b;
+    }
+
+    private double getYSinus(double x) {
+        return Math.sin(x);
     }
 }
 
